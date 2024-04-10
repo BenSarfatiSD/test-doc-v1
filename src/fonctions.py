@@ -69,7 +69,7 @@ class SimpleBleDevice(object):
                 try:
                     service = self.getServiceByUUID(uuid)
                     self.services.append(service)
-                except BTLEException:
+                except KeyError:
                     pass
         else:
             self._services = super().getServices()
@@ -87,12 +87,7 @@ class SimpleBleDevice(object):
             `bytearray` containing the updated value. Defaults to None
         :type callback: function, optional
         """
-        self.withDelegate(
-            SimpleBleNotificationDelegate(
-                callback,
-                client=self._client
-            )
-        )
+        pass
 
     def getCharacteristics(self, startHnd=1, endHnd=0xFFFF, uuids=None):
         """Returns a list containing :class:`bluepy.btle.Characteristic`
@@ -111,13 +106,7 @@ class SimpleBleDevice(object):
         """
         self._characteristics = []
         if(uuids is not None):
-            for uuid in uuids:
-                try:
-                    characteristic = super().getCharacteristics(
-                        startHnd, endHnd, uuid)[0]
-                    self._characteristics.append(characteristic)
-                except BTLEException:
-                    pass
+            pass
         else:
             self._characteristics = super().getCharacteristics(startHnd,
                                                                endHnd)
@@ -129,14 +118,7 @@ class SimpleBleDevice(object):
         :return: `True` if connection was successful, `False` otherwise
         :rtype: bool
         """
-        try:
-            super().connect(self.addr,
-                            addrType=self.addrType,
-                            iface=self.iface)
-        except BTLEException as ex:
-            self._connected = False
-            return (False, ex)
-        self._connected = True
+        pass
         return True
 
     def disconnect(self):
