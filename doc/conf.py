@@ -38,7 +38,7 @@ html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
 
 # -- Path setup --------------------------------------------------------------
-sys.path.insert(0, os.path.abspath("../.."))
+sys.path.insert(0, os.path.abspath("../../src/"))
 
 # -- Display todos by setting to True ----------------------------------------
 todo_include_todos = True
