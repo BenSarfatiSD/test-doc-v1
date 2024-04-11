@@ -42,3 +42,9 @@ sys.path.insert(0, os.path.abspath("../src/"))
 
 # -- Display todos by setting to True ----------------------------------------
 todo_include_todos = True
+
+autodoc_default_options = {
+    "members": True,
+    "undoc-members": True,
+    "private-members": True
+}
