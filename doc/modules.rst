@@ -5,3 +5,4 @@ src
    :maxdepth: 4
 
    fonctions0
+   fonctions1
