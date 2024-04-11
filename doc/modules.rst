@@ -7,3 +7,4 @@ src
    folder1
    fonctions0
    fonctions1
+   fonctions3
